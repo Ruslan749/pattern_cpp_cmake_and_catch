@@ -4,47 +4,39 @@
 #include <string>
 
 class Animal {
-private:
-    std::string name; // имя животного
-    int age, // возраст животного 
+protected:
+    int age = 0, // возраст животного 
     heart, // состояние жизней
     mentality_state, // состояние разума
     physical_state, // физическое состояние
     saturation_state; // состояние насыщения
+    std::string name; // имя животного
+    std::string type; // тип животного (например, собака, кошка и т.д.)
 
 public:
     // Constructor
-    Animal(const std::string& name, int age);
+    Animal(); // Default constructor
+    Animal(const std::string& name,const std::string& type);
+    // Destructor   
+
 
     // Getters
-    std::string getName() const;
-    int getAge() const;
+    std::string getName();
+    std::string getType();
+    int getAge();
+    int getHeart();
+    int getMentalityState();
+    int getPhysicalState();
+    int getSaturationState();
 
     // Setters
     void setName(const std::string& name);
+    void setType(const std::string& type);
     void setAge(int age);
-};
-
-class Dog : public Animal {
-public:
-    Dog(const std::string& name, int age, const std::string& breed);
-
-    std::string getBreed() const;
-    void setBreed(const std::string& breed);
-
-private:
-    std::string breed;
-};
-
-class Cat : public Animal {
-public:
-    Cat(const std::string& name, int age, const std::string& color);
-
-    std::string getColor() const;
-    void setColor(const std::string& color);
-
-private:
-    std::string color;
+    void setHeart(int heart);
+    void setMentalityState(int mentality_state);
+    void setPhysicalState(int physical_state);
+    void setSaturationState(int saturation_state);
 };
 
 

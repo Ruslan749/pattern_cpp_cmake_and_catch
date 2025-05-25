@@ -3,12 +3,13 @@
 
 int main() {
 
+    Animal dog;
+    std::cout << "Dog Name: " << dog.getName() << std::endl;
 
-    Dog bulldog("Buddy", 3, "Bulldog");
-    std::cout << "Dog Name: " << bulldog.getName() << ", Breed: " << bulldog.getBreed() << std::endl;
+    Animal bulldog ("Buddy","dog");
+    std::cout << "Dog Name: " << bulldog.getName() << std::endl;
 
-    Cat persian("Whiskers", 2, "White");
-    std::cout << "Cat Name: " << persian.getName() << ", Color: " << persian.getColor() << std::endl;
+
 
 
     return 0;

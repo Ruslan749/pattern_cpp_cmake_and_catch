@@ -1,48 +1,65 @@
 #include "animal.h"
-#include <iostream>
-Animal::Animal(const std::string &name, int age)
-    : name(name), age(age) {}
 
-std::string Animal::getName() const {
-    return name;
+// Реализация конструктора Animal
+Animal::Animal(const std::string& name, const std::string& type) 
+    : age(0), 
+      heart(100), 
+      mentality_state(100), 
+      physical_state(100), 
+      saturation_state(100)
+      {
+        this->name = name; // Инициализация имени животного
+      }
+
+      Animal::Animal() 
+    : age(0), 
+      heart(100), 
+      mentality_state(100), 
+      physical_state(100), 
+      saturation_state(100),
+      type("Unknown"), // Инициализация типа животного по умолчанию
+      name("Unknown") { // Инициализация имени животного по умолчанию
+        this->name = name; // Инициализация имени животного
+        this->type = type; // Инициализация типа животного
+      }
+
+// Реализация методов GET
+std::string Animal::getName() {
+    return name; // Возвращает имя животного
+}
+int Animal::getAge() {
+    return age; // Возвращает возраст животного
+}
+int Animal::getHeart() {
+    return heart; // Возвращает состояние жизней животного
+}
+int Animal::getMentalityState() {
+    return mentality_state; // Возвращает состояние разума животного
+}
+int Animal::getPhysicalState() {
+    return physical_state; // Возвращает физическое состояние животного
+}
+int Animal::getSaturationState()  {
+    return saturation_state; // Возвращает состояние насыщения животного
 }
 
-int Animal::getAge() const {
-    return age;
+
+// Реализация методов SET
+void Animal::setName(const std::string& name) {
+    this->name = name; // Устанавливает имя животного
 }
-
-
-void Animal::setName(const std::string &name) {
-    this->name = name;
+void Animal::setHeart(int heart) {
+    this->heart = heart; // Устанавливает состояние жизней животного
 }
-
+void Animal::setMentalityState(int mentality_state) {
+    this->mentality_state = mentality_state; // Устанавливает состояние разума животного
+}
+void Animal::setPhysicalState(int physical_state) {
+    this->physical_state = physical_state; // Устанавливает физическое состояние животного
+}
+void Animal::setSaturationState(int saturation_state) {
+    this->saturation_state = saturation_state; // Устанавливает состояние насыщения животного
+}
 void Animal::setAge(int age) {
-    this->age = age;
-}
-
-
-
-// Класс Dog
-Dog::Dog(const std::string& name, int age, const std::string& breed)
-    : Animal(name, age), breed(breed) {}
-
-std::string Dog::getBreed() const {
-    return breed;
-}
-
-void Dog::setBreed(const std::string& breed) {
-    this->breed = breed;
-}
-
-
-// Класс Cat
-Cat::Cat(const std::string& name, int age, const std::string& color)
-    : Animal(name, age), color(color) {}
-
-std::string Cat::getColor() const {
-    return color;
-}
-
-void Cat::setColor(const std::string& color) {
-    this->color = color;
+    this->age = age; // Устанавливает возраст животного
 }
