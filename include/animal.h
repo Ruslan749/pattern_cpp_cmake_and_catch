@@ -4,24 +4,25 @@
 #include <string>
 
 class Animal {
+private:
+    std::string name; // имя животного
+    int age, // возраст животного 
+    heart, // состояние жизней
+    mentality_state, // состояние разума
+    physical_state, // физическое состояние
+    saturation_state; // состояние насыщения
+
 public:
     // Constructor
-    Animal(const std::string& name, int age, const std::string& species);
+    Animal(const std::string& name, int age);
 
     // Getters
     std::string getName() const;
     int getAge() const;
-    std::string getSpecies() const;
 
     // Setters
     void setName(const std::string& name);
     void setAge(int age);
-    void setSpecies(const std::string& species);
-
-private:
-    std::string name;
-    int age;
-    std::string species;
 };
 
 class Dog : public Animal {

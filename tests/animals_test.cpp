@@ -1,23 +1,19 @@
+#define CATCH_CONFIG_MAIN
 #include <catch2/catch_all.hpp>
 #include "animal.h"
 
 TEST_CASE("тестирование родительского класса животных", "[Animal]") {
-    Animal animal("Lion", 5, "Panthera leo");
-
+    Animal animal("Lion", 5);
     SECTION("установка пораметров") {
-        REQUIRE(animal.getName() == "Lionn");
+        REQUIRE(animal.getName() == "Lion");
         REQUIRE(animal.getAge() == 5);
-        REQUIRE(animal.getSpecies() == "Panthera leo");
     }
-
     SECTION("получение параметров") {
         animal.setName("Tiger");
         animal.setAge(3);
-        animal.setSpecies("Panthera tigris");
 
         REQUIRE(animal.getName() == "Tiger");
         REQUIRE(animal.getAge() == 3);
-        REQUIRE(animal.getSpecies() == "Panthera tigris");
     }
 }
 
@@ -27,7 +23,6 @@ TEST_CASE("тестирование класса Dog", "[Dog]") {
     SECTION("установка параметров") {
         REQUIRE(dog.getName() == "Buddy");
         REQUIRE(dog.getAge() == 4);
-        REQUIRE(dog.getSpecies() == "Dog");
         REQUIRE(dog.getBreed() == "Golden Retriever");
     }
 
@@ -38,7 +33,6 @@ TEST_CASE("тестирование класса Dog", "[Dog]") {
 
         REQUIRE(dog.getName() == "Max");
         REQUIRE(dog.getAge() == 2);
-        REQUIRE(dog.getSpecies() == "Dog");
         REQUIRE(dog.getBreed() == "Labrador");
     }
 }
@@ -49,7 +43,6 @@ TEST_CASE("тестирование класса Cat", "[Cat]") {
     SECTION("установка параметров") {
         REQUIRE(cat.getName() == "Whiskers");
         REQUIRE(cat.getAge() == 3);
-        REQUIRE(cat.getSpecies() == "Cat");
         REQUIRE(cat.getColor() == "Black");
     }
 
@@ -60,7 +53,6 @@ TEST_CASE("тестирование класса Cat", "[Cat]") {
 
         REQUIRE(cat.getName() == "Mittens");
         REQUIRE(cat.getAge() == 1);
-        REQUIRE(cat.getSpecies() == "Cat");
         REQUIRE(cat.getColor() == "White");
     }
 }

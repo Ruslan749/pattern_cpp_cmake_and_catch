@@ -1,13 +1,7 @@
 #include <iostream>
-#include "sum.h"
 #include "animal.h"
 
 int main() {
-    // int a = 5, b = 10;
-    // std::cout << "Sum: " << sum(a, b) << std::endl;  
-
-    Animal dog("Rex", 5, "Dog");
-    std::cout << "Name: " << dog.getName() << std::endl;
 
 
     Dog bulldog("Buddy", 3, "Bulldog");

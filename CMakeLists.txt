@@ -21,7 +21,7 @@ FetchContent_MakeAvailable(Catch2)
 
 # Собираем тесты (обязательно добавляем реализацию sum.cpp и math_utils.cpp!)
 file(GLOB TEST_SOURCES "tests/*.cpp")
-add_executable(run_tests ${TEST_SOURCES} src/sum.cpp src/code_wors.cpp src/animal.cpp)
+add_executable(run_tests ${TEST_SOURCES} src/animal.cpp)
 
 # Линкуем тесты с Catch2
 target_link_libraries(run_tests PRIVATE Catch2::Catch2WithMain)
